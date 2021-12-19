@@ -2,6 +2,8 @@
 
 ```js
 // Your code
+
+new Promise()
 ```
 
 2. Create another promise. Now have it reject with a value of `Rejected Promise!` without using `setTimeout`. Print the contents of the promise after it has been rejected by passing console.log to `.catch`
