@@ -32,15 +32,28 @@ function displayOptions(sources){
       select.append(option)
     })
 }
-fetch(url)
+
+
+
+function handleSpinner(status = false){
+  if(status) {
+  newsElm.innerHTML = `<div class="donut"></div>;
+  }
+}
+
+function init(){
+  handleSpinner(true);
+  fetch(url)
 .then(res => res.json())
 .then((news) => {
-  console.log(news)
-  allNews = news
-  renderNews(news)
+  handleSpinner();
+  allNews = news;
+  renderNews(news);
   let allSources = Array.from(new Set(news.map((n) => n.newsSite)))
   .displayOptions(allSources)           // new Set - returns unique array, not the ones repeating , array.from will make it into array
 })
+}
+
 select.addEventlistener('change', (event) => {
     let source = event.target.value.trim();
     let filteredNews;
