@@ -8,3 +8,14 @@
 Add-on:
 
 - Refactor the image search app you created (in previous exercise) to use the function `fetch` you crated above.
+- 
+function fetch(url, successHandler) {
+  let xhr = new XMLHttpRequest();
+  xhr.open('GET', url);
+  xhr.onload = () => successHandler(JSON.parse(xhr.response))
+  
+  xhr.onerror = function () {
+  console.error('something went wrong')
+  };
+  xhr.send();
+}
