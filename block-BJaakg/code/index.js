@@ -8,7 +8,7 @@ Each character being displayed in the popup will display name, gender, aliases a
 The popup will also have a cross icon. Once clicked it will close the popup.
 Handle error and show loading indicator when ever data is fetched.
 
-
+function main(){
 let modalWindow = document.querySelector('.modal-window')
 let modalClose = document.querySelector('.modal-close')
 let openButton = document.querySelector('.btn')
@@ -72,4 +72,6 @@ handleSpinner(booksUL, true)
 }
 fetchBooks()
 
+}
+main()
 
